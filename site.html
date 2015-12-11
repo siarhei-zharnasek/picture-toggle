@@ -3,28 +3,42 @@
 <head>
   <title>Веб-страница</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <link type="text/css" rel="stylesheet" href="stylesheet.css" />
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
   <style>
   img {
-    height: 45px;
-    width: 45px;
+    height: 90px;
+    width: 90px;
+  }
+  textarea {
+    resize: none;
+  }
+  li {
+    list-style-type: none;
   }
   </style>
 </head>
 <body>
   <form>
-  <p>Введите ссылку на картинку:</p>
-  <textarea id="area" rows="2" cols="50">
-  </textarea>
-  <br>
-  <p>Введите комментарий:</p>
-  <input id="comment" type="text" placeholder="Комментарий">
-  <input type="submit" value="Отправить">
-  </form>
-  <p><button id="knopka">Очистить страницу</button></p>
-  <br>
-  <ul id="res"></ul>
+    <table width="100%" cellspacing="0" cellpading="4">
+      <tr>
+        <td align="right" width="200">Введите ссылку на картинку:</td>
+        <td><textarea id="area" rows="1" cols="50" autofocus placeholder="Ссылка"></textarea></td>
+      </tr>
+      <tr>
+        <td align="right">Введите комментарий:</td>
+        <td><input id="comment" type="text" placeholder="Комментарий"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Отправить" class="btn btn-primary"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="knopka" class="btn btn-danger">Очистить страницу</button></td>
+      </tr>
+    </table>
   <script src="js.js">
   </script>
+  <script src="bootstrap.min.js"></script>
 </body>
 </html>
