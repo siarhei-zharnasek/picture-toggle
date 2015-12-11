@@ -1,22 +1,22 @@
 ﻿$('form').on('submit', function(e) {
   e.preventDefault();
-  var valid = /^(ftp|http|https):\/\/[^ "]+$/.test('' + area.value);
+  var valid = /^(ftp|http|https):\/\/[^ "]+$/.test( '' + $('#area').val() );
+
   if ( valid ) {
-    var newImg = document.createElement('img');
-    $(newImg).attr('src', area.value);
-    var newLi = document.createElement('li');
-    newLi.appendChild(newImg);
-    res.appendChild(newLi);
-    if ( comment.value ) {
-      var newCom = document.createElement('li');
-      newCom.innerHTML = comment.value;
-      res.appendChild(newCom);
+    var newImg = $('<img></img>')
+        .attr( 'src', $('#area')
+        .val() )
+        .appendTo( $('<li></li>')
+        .appendTo( $('ul') ) );
+
+    if ( $('#comment').val() ) {
+      var newCom = $('<li>' + $(comment).val() + '</li>').appendTo( $('ul') );
       $(newImg).click(function() {
         $(newCom).toggle();
       });
     }
   }
-else alert('Ошибка! Введите ссылку на картинку');
+  else alert('Ошибка! Введите ссылку на картинку');
 });
 $('#knopka').on('click', function() {
   $('li').remove();
